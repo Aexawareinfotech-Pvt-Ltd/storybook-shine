@@ -37,12 +37,16 @@ All colors MUST be HSL.
     --ring: 145 60% 25%;
 
     /* Custom design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(145 60% 25%), hsl(120 50% 35%));
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(145 60% 25%),
+      hsl(120 50% 35%)
+    );
     --gradient-hero: linear-gradient(180deg, hsl(45 15% 98%), hsl(45 25% 95%));
     --gradient-accent: linear-gradient(90deg, hsl(40 85% 65%), hsl(45 90% 70%));
     --shadow-elegant: 0 20px 60px -10px hsl(145 60% 25% / 0.15);
     --shadow-card: 0 4px 20px hsl(145 20% 20% / 0.08);
-    
+
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.75rem;
@@ -110,5 +114,152 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Mobile-first responsive utilities */
+@layer utilities {
+  /* Responsive text sizes */
+  .text-responsive-xs {
+    @apply text-xs sm:text-sm;
+  }
+
+  .text-responsive-sm {
+    @apply text-sm sm:text-base;
+  }
+
+  .text-responsive-base {
+    @apply text-base sm:text-lg;
+  }
+
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl md:text-2xl;
+  }
+
+  .text-responsive-xl {
+    @apply text-xl sm:text-2xl md:text-3xl;
+  }
+
+  .text-responsive-2xl {
+    @apply text-2xl sm:text-3xl md:text-4xl;
+  }
+
+  .text-responsive-3xl {
+    @apply text-3xl sm:text-4xl md:text-5xl;
+  }
+
+  .text-responsive-4xl {
+    @apply text-4xl sm:text-5xl md:text-6xl;
+  }
+
+  /* Responsive spacing */
+  .space-responsive-xs {
+    @apply space-y-2 sm:space-y-3;
+  }
+
+  .space-responsive-sm {
+    @apply space-y-3 sm:space-y-4;
+  }
+
+  .space-responsive-md {
+    @apply space-y-4 sm:space-y-6;
+  }
+
+  .space-responsive-lg {
+    @apply space-y-6 sm:space-y-8;
+  }
+
+  .space-responsive-xl {
+    @apply space-y-8 sm:space-y-12;
+  }
+
+  /* Responsive padding */
+  .padding-responsive-xs {
+    @apply p-2 sm:p-3 md:p-4;
+  }
+
+  .padding-responsive-sm {
+    @apply p-3 sm:p-4 md:p-6;
+  }
+
+  .padding-responsive-md {
+    @apply p-4 sm:p-6 md:p-8;
+  }
+
+  .padding-responsive-lg {
+    @apply p-6 sm:p-8 md:p-12;
+  }
+
+  /* Responsive margins */
+  .margin-responsive-xs {
+    @apply m-2 sm:m-3 md:m-4;
+  }
+
+  .margin-responsive-sm {
+    @apply m-3 sm:m-4 md:m-6;
+  }
+
+  .margin-responsive-md {
+    @apply m-4 sm:m-6 md:m-8;
+  }
+
+  .margin-responsive-lg {
+    @apply m-6 sm:m-8 md:m-12;
+  }
+
+  /* Responsive container */
+  .container-responsive {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Responsive grid gaps */
+  .gap-responsive-xs {
+    @apply gap-2 sm:gap-3 md:gap-4;
+  }
+
+  .gap-responsive-sm {
+    @apply gap-3 sm:gap-4 md:gap-6;
+  }
+
+  .gap-responsive-md {
+    @apply gap-4 sm:gap-6 md:gap-8;
+  }
+
+  .gap-responsive-lg {
+    @apply gap-6 sm:gap-8 md:gap-12;
+  }
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  /* Improve touch targets for mobile */
+  .btn-touch {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
+  /* Better mobile text readability */
+  .text-mobile-readable {
+    @apply leading-relaxed;
+  }
+
+  /* Prevent horizontal scroll on mobile */
+  .prevent-overflow {
+    @apply overflow-x-hidden;
+  }
+
+  /* Mobile-optimized cards */
+  .card-mobile {
+    @apply rounded-lg shadow-sm;
+  }
+}
+
+/* Print styles for better mobile printing */
+@media print {
+  .no-print {
+    @apply hidden;
+  }
+
+  .print-break {
+    page-break-before: always;
   }
 }
