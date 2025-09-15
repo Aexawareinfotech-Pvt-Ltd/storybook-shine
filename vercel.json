@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm run prebuild && npm run build",
+  "installCommand": "npm install --force",
+  "framework": "vite",
+  "functions": {
+    "app/**/*.tsx": {
+      "maxDuration": 30
+    }
+  }
+}
