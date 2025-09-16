@@ -62,7 +62,10 @@ const features = [
 
 const BookFeatures = () => {
   return (
-    <section className="py-12 sm:py-16 md:py-20 px-4 bg-background">
+    <section
+      id="book-features"
+      className="py-12 sm:py-16 md:py-20 px-4 bg-background"
+    >
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center mb-8 md:mb-12 lg:mb-16">
           <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6">

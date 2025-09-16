@@ -6,7 +6,10 @@ import image from "@/assets/image.png";
 
 const AuthorProfile = () => {
   return (
-    <section className="py-12 sm:py-16 md:py-20 px-4 bg-muted/30">
+    <section
+      id="author-profile"
+      className="py-12 sm:py-16 md:py-20 px-4 bg-muted/30"
+    >
       <div className="container mx-auto max-w-7xl px-4">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Author Image */}
